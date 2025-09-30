@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const CTA = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="py-20 md:py-32">
       <div className="container px-4">
@@ -31,6 +34,7 @@ const CTA = () => {
                 variant="premium" 
                 size="lg" 
                 className="bg-white text-primary hover:bg-white/90 shadow-elegant group"
+                onClick={() => navigate("/create")}
               >
                 Get Started Free
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -39,6 +43,7 @@ const CTA = () => {
                 variant="ghost" 
                 size="lg"
                 className="text-white hover:bg-white/10"
+                onClick={() => navigate("/create")}
               >
                 View Demo Sites
               </Button>

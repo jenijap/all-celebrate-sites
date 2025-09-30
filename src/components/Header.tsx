@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between px-4">
@@ -31,7 +34,11 @@ const Header = () => {
           <Button variant="ghost" size="sm" className="hidden sm:flex">
             Sign In
           </Button>
-          <Button variant="default" size="sm">
+          <Button 
+            variant="default" 
+            size="sm"
+            onClick={() => navigate("/create")}
+          >
             Get Started
           </Button>
         </div>

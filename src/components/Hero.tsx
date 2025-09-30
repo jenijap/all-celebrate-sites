@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-celebration.jpg";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-hero">
       {/* Background Image with Overlay */}
@@ -40,11 +43,20 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button variant="hero" size="lg" className="group">
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="group"
+              onClick={() => navigate("/create")}
+            >
               Get Started Free
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="premium" size="lg">
+            <Button 
+              variant="premium" 
+              size="lg"
+              onClick={() => navigate("/create")}
+            >
               View Templates
             </Button>
           </div>
